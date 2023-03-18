@@ -58,7 +58,7 @@ It always takes the same amount of time to find the first element in the array. 
 
 ![Image Example](Stack-bigO2.jpg)
 
-An example of a O(1) performace in c sharp is shown and explain below
+An example of a O(1) performace in c sharp is shown and explain below.
 ```csharp
 Stack<int> stack = new Stack<int>();
 stack.Push(5); 
@@ -107,65 +107,59 @@ public static string ReverseString(string str)
 ```
 In this code, we create a new stack of characters Stack<char> stack = new Stack<char>() and iterate over each character in the input string str. We push every character onto the stack using stack.Push(c). We then create an empty string reversedString and pop each character off the stack using stack.Pop() and append it to the string. Finally, we return the reversed string.
 
+So, the output of this program will be the reverse of the input string.
+
 ## 2. Example:
-Evaluate a postfix expression using a stack: Parse the expression from left to right and push each operand onto the stack. When an operator is encountered, pop the top two operands from the stack, apply the operator to them, and push the result back onto the stack.
+Given a string with parentheses, write a function to determine if the parentheses are balanced. A string is considered balanced if it consists entirely of pairs of opening/closing parentheses (in that order), and for every opening parenthesis there is a corresponding closing parenthesis.
 
 ```csharp
-public static int EvaluatePostfix(string expression)
+public static bool IsBalanced(string str)
 {
-    Stack<int> stack = new Stack<int>();
-    foreach (char c in expression)
+    Stack<char> stack = new Stack<char>();
+    foreach (char c in str)
     {
-        if (Char.IsDigit(c))
+        if (c == '(')
         {
-            stack.Push(c - '0'); // convert char to int and push onto stack
+            stack.Push(c);
         }
-        else if (c == '+' || c == '-' || c == '*' || c == '/')
+        else if (c == ')')
         {
-            int operand2 = stack.Pop();
-            int operand1 = stack.Pop();
-            int result = 0;
-            switch (c)
+            if (stack.Count == 0 || stack.Pop() != '(')
             {
-                case '+':
-                    result = operand1 + operand2;
-                    break;
-                case '-':
-                    result = operand1 - operand2;
-                    break;
-                case '*':
-                    result = operand1 * operand2;
-                    break;
-                case '/':
-                    result = operand1 / operand2;
-                    break;
+                return false;
             }
-            stack.Push(result);
         }
     }
-    return stack.Pop();
+    return stack.Count == 0;
 }
 ```
-In this example, we create a new stack of integers Stack<int> stack = new Stack<int>() and iterate over each character in the input expression expression. If the character is a digit, we convert it to an integer and push it onto the stack using stack.Push(c - '0'). If the character is an operator, we pop the top two operands off the stack using int operand2 = stack.Pop() and int operand1 = stack.Pop() and apply the operator to them using a switch statement. We then push the result of the operation back onto the stack using stack.Push(result). Finally, we return the last element remaining in the stack.
+This function uses a stack to keep track of opening parentheses. It iterates over each character in the input string str, and if the character is an opening parenthesis, it pushes it onto the stack. If the character is a closing parenthesis, it pops the top character off the stack and checks if it matches the corresponding opening parenthesis. If the stack is empty or the parentheses don't match, the function returns false. If the function makes it through the entire loop without returning false, it checks if the stack is empty and returns true if it is. This indicates that all parentheses were balanced.
+
+So, if we call the IsBalanced method with the input string "((()))", the output would be true as this string has balanced parentheses. If we call the IsBalanced method with the input string "(()))", the output would be false as this string does not have balanced parentheses.
 
 
+# How would the data structure be used in C#
+
+To successfully implement a stack data structure in C# certain operations are put to use. These operations makes it so that the particular task that's needed to be perform is successfully perform.Some of these operations like push and pop were mentioned initially in this tutorial, but the more of them are listed below and explain below.
+- Push: `stack.Push(1)`, `stack.Push(2)`, `stack.Push(3)` This push operations makes it possible for us to push three integer number or element into the tack structure.
+- Pop: we use `stack.Pop(3)` to pop out the first value in the stack and print it using the `console.WriteLine()` command in C# to print it on screen.
+- Peek: `stack.Peek()` this operations makes it possible for us to peek out the top value of the stack without removing it. and print it on screen using the command `console.WriteLine()`.
+- Contains: Contains operation check if the stack contains the value using `stack.Contain(1)` and then print it using `console.WriteLine()`.
+- Array: We copy the stack to an array using this command `int[] array = stack.ToArray()`. 
+- Clear: And finally we use the `stack. Clear()` operation to clear the stack.
+
+# Explain what kind of error are common using this data structure.
+Some common errors that can occur when using stack data structure in C# are:
+
+1. Stack overflow error: This occurs when the stack becomes too large and exceeds its maximum capacity. To prevent this error, it is important to make sure that the stack is not being used excessively and to increase the stack size if necessary.
 
 
+2. Invalid operation exception: This occurs when trying to perform an operation that is not supported by the stack, such as trying to remove an item from an empty stack. To prevent this error, it is important to check if the stack is empty before performing operations that require items to be present.
 
- 
+3. Index out of range exception: This occurs when trying to access an element that is outside the range of the stack. To prevent this error, it is important to make sure that the index is within the range of the stack before accessing it.
 
-## How would the data structure be used in C#
-```charp
-discuss recursion in this section of your outline
+4. Null reference exception: This occurs when trying to access an object that is null. To prevent this error, it is important to check that the object is not null before accessing it.
 
-
-```
-## Explain what kind of error are common using this data structure.
-```csharp
-
-
-
-```
 
 ## [Picture Explanation on stack](4-pictureFile.md)
 ## [Csharp Code on stack](5-C%23File.md)
