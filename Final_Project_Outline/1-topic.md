@@ -50,7 +50,7 @@ In the Main() function, we're calling the AddNumbers() function with arguments 5
 
 The [table](6.otherFiles.md) represent how function calls are being track. 
 # What is the performance of the data structure 
-All operations in stack must be of O(1) time complexity. The push and pop operation is a perfect example of O(1). This means all item inserted on a stack follows one step eachto complete the entire process. The process is constant which means it will always run  in the same amount of time, no matter the input size. For example, if we want to get the first item of an array, it doesn’t matter how big the input size is. 
+All operations in stack must be of O(1) time complexity. The push and pop operation is a perfect example of O(1). This means all item inserted on a stack follows one step each to complete the entire process. The process is constant which means it will always run  in the same amount of time, no matter the input size. For example, if we want to get the first item of an array, it doesn’t matter how big the input size is. 
 
 ![Image Example](Stack-bigO.jpg)
 
