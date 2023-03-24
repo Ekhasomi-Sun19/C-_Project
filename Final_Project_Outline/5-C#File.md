@@ -1,29 +1,4 @@
-# C Sharp Stack coding example
-
-## 1. Example:
-
-Reverse a string using a stack: Push every character of the string onto a stack and then pop each character off the stack to get the reversed string.
-
-```csharp
-public static string ReverseString(string str)
-{
-    Stack<char> stack = new Stack<char>();
-    foreach (char c in str)
-    {
-        stack.Push(c);
-    }
-    string reversedString = "";
-    while (stack.Count > 0)
-    {
-        reversedString += stack.Pop();
-    }
-    return reversedString;
-}
-```
-In this code, we create a new stack of characters Stack<char> stack = new Stack<char>() and iterate over each character in the input string str. We push every character onto the stack using stack.Push(c). We then create an empty string reversedString and pop each character off the stack using stack.Pop() and append it to the string. Finally, we return the reversed string.
-
-So, the output of this program will be the reverse of the input string.
-
+# Stack Problem Solution
 ## 2. Example:
 Given a string with parentheses, write a function to determine if the parentheses are balanced. A string is considered balanced if it consists entirely of pairs of opening/closing parentheses (in that order), and for every opening parenthesis there is a corresponding closing parenthesis.
 
@@ -52,4 +27,44 @@ This function uses a stack to keep track of opening parentheses. It iterates ove
 
 So, if we call the IsBalanced method with the input string "((()))", the output would be true as this string has balanced parentheses. If we call the IsBalanced method with the input string "(()))", the output would be false as this string does not have balanced parentheses.
 
+
+# SET Problem Solution
+## 2. Example:
+Given a set of integers, remove any duplicate elements and return the updated set.
+
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Input set
+        HashSet<int> set = new HashSet<int>() { 1, 2, 3, 3, 4, 5, 5 };
+
+        // Create a new set to store the unique elements
+        HashSet<int> uniqueSet = new HashSet<int>();
+
+        // Add the elements from the input set to the new set
+        foreach (int elem in set)
+        {
+            uniqueSet.Add(elem);
+        }
+
+        // Print the unique elements in the set
+        Console.WriteLine("Unique elements:");
+        foreach (int elem in uniqueSet)
+        {
+            Console.WriteLine(elem);
+        }
+    }
+}
+```
+In this example, we first define an input set of integers using the HashSet<int> constructor. We then create a new HashSet<int> called uniqueSet to store the unique elements.
+
+We loop through the input set using a foreach loop, and add each element to the new set using the Add method. Since the set automatically removes duplicates, we end up with only the unique elements in the new set.
+
+Finally, we print the unique elements in the set using a foreach loop.
+
 [Back to Stack Homepage](1-topic.md)
+
+
+[Back to Set Tutorial Homepage](2-topic.md)

@@ -6,7 +6,7 @@
 
 A stack is a type of data structure in a program by which data are allowed to be stored and retrieved in a last-in, first-out (LIFO) order. A simple example of this is a stack of plates, the last plate to be stack is the first plate that is removed from the stack. 
 
-# What is the purpose of the (Stack) data structure?
+## What is the purpose of the (Stack) data structure?
 The purpose of a stack in a program is to allow data to be stor and manage in a way that those data are preserved in the order which they are added. The two basic operations that can be perform with stacks are 
 [Push](https://afteracademy.com/blog/stack-and-its-basic-operations/#:~:text=Push%20operation%20refers%20to%20inserting,the%20top%20of%20the%20stack.) and [Pop](https://afteracademy.com/blog/stack-and-its-basic-operations/#:~:text=Push%20operation%20refers%20to%20inserting,the%20top%20of%20the%20stack.). However there are other operations like PEEK and isEmpty that can also be perform. The stack data structure is useful in many programming scenarios, such as parsing expressions, tracking the execution of function calls, undo/redo operations in text editors.
 A simple example of some purpose of stack is mentioned and implemented below. 
@@ -49,7 +49,7 @@ public int AddNumbers(int num1, int num2)
 In the Main() function, we're calling the AddNumbers() function with arguments 5 and 10. Within the AddNumbers() function, we're printing out a message to the console indicating that we're executing the function with those arguments. We then calculate the sum of num1 and num2, and print out another message to the console indicating that we're returning the sum. Finally, we return the sum back to the Main() function, where we print out the result to the console.
 
 The [table](6.otherFiles.md) represent how function calls are being track. 
-# What is the performance of the data structure 
+## What is the performance of the data structure 
 All operations in stack must be of O(1) time complexity. The push and pop operation is a perfect example of O(1). This means all item inserted on a stack follows one step each to complete the entire process. The process is constant which means it will always run  in the same amount of time, no matter the input size. For example, if we want to get the first item of an array, it doesn’t matter how big the input size is. 
 
 ![Image Example](Stack-bigO.jpg)
@@ -72,8 +72,18 @@ The second line push an item onto the stack, the third line get the item without
 ## Efficiency of common operations
 The efficiency of common operations like push, pop, peek are O(1). A Stack is a Linear Data Structure in which Operations are performed in a specific order known as LIFO(Last In First Out) or FILO (First In Last Out). Operations on Stack occur only at one end called as the TOP of the stack. In all of this, both worse case and best case scenerio for this operation is O(1).
 
+## How would the data structure be used in C#
 
-# Problem to Solve (Example)
+To successfully implement a stack data structure in C# certain operations are put to use. These operations makes it so that the particular task that's needed to be perform is successfully perform.Some of these operations like push and pop were mentioned initially in this tutorial, but the more of them are listed below and explain below.
+- Push: `stack.Push(1)`, `stack.Push(2)`, `stack.Push(3)` This push operations makes it possible for us to push three integer number or element into the tack structure.
+- Pop: we use `stack.Pop(3)` to pop out the first value in the stack and print it using the `console.WriteLine()` command in C# to print it on screen.
+- Peek: `stack.Peek()` this operations makes it possible for us to peek out the top value of the stack without removing it. and print it on screen using the command `console.WriteLine()`.
+- Contains: Contains operation check if the stack contains the value using `stack.Contain(1)` and then print it using `console.WriteLine()`.
+- Array: We copy the stack to an array using this command `int[] array = stack.ToArray()`. 
+- Clear: And finally we use the `stack. Clear()` operation to clear the stack.
+
+
+## Problem to Solve (Example)
 As we have discussed so far on Stack data structure, we have highlighted and explain the following for better understanding. This include,
 - Understanding the stack data structure 
 - What is the purpose of the (Stack) data structure? 
@@ -115,40 +125,13 @@ Given a string with parentheses, write a function to determine if the parenthese
 ```csharp
 public static bool IsBalanced(string str)
 {
-    Stack<char> stack = new Stack<char>();
-    foreach (char c in str)
-    {
-        if (c == '(')
-        {
-            stack.Push(c);
-        }
-        else if (c == ')')
-        {
-            if (stack.Count == 0 || stack.Pop() != '(')
-            {
-                return false;
-            }
-        }
-    }
-    return stack.Count == 0;
+   //Your Code Solution Here
 }
 ```
-This function uses a stack to keep track of opening parentheses. It iterates over each character in the input string str, and if the character is an opening parenthesis, it pushes it onto the stack. If the character is a closing parenthesis, it pops the top character off the stack and checks if it matches the corresponding opening parenthesis. If the stack is empty or the parentheses don't match, the function returns false. If the function makes it through the entire loop without returning false, it checks if the stack is empty and returns true if it is. This indicates that all parentheses were balanced.
+Spend at least 30min solving example two problem before opening the problem solution.
+## [Problem Solution](5-C%23File.md)
 
-So, if we call the IsBalanced method with the input string "((()))", the output would be true as this string has balanced parentheses. If we call the IsBalanced method with the input string "(()))", the output would be false as this string does not have balanced parentheses.
-
-
-# How would the data structure be used in C#
-
-To successfully implement a stack data structure in C# certain operations are put to use. These operations makes it so that the particular task that's needed to be perform is successfully perform.Some of these operations like push and pop were mentioned initially in this tutorial, but the more of them are listed below and explain below.
-- Push: `stack.Push(1)`, `stack.Push(2)`, `stack.Push(3)` This push operations makes it possible for us to push three integer number or element into the tack structure.
-- Pop: we use `stack.Pop(3)` to pop out the first value in the stack and print it using the `console.WriteLine()` command in C# to print it on screen.
-- Peek: `stack.Peek()` this operations makes it possible for us to peek out the top value of the stack without removing it. and print it on screen using the command `console.WriteLine()`.
-- Contains: Contains operation check if the stack contains the value using `stack.Contain(1)` and then print it using `console.WriteLine()`.
-- Array: We copy the stack to an array using this command `int[] array = stack.ToArray()`. 
-- Clear: And finally we use the `stack. Clear()` operation to clear the stack.
-
-# Explain what kind of error are common using this data structure.
+## Explain what kind of error are common using this data structure.
 Some common errors that can occur when using stack data structure in C# are:
 
 1. Stack overflow error: This occurs when the stack becomes too large and exceeds its maximum capacity. To prevent this error, it is important to make sure that the stack is not being used excessively and to increase the stack size if necessary.
@@ -162,6 +145,4 @@ Some common errors that can occur when using stack data structure in C# are:
 
 
 ## [Picture Explanation on stack](4-pictureFile.md)
-## [Csharp Code on stack](5-C%23File.md)
-
 ## [Other Files Including Tables](6.otherFiles.md)
