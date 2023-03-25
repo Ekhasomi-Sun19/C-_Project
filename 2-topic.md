@@ -8,15 +8,15 @@ A `SET` is a data structure that stores unique element of the same type in a sor
 - Removing an element from the set
 - Testing whether an element is a member of the set
 - Finding the number of element in the set
-- Performing set operations such as union, intersection, and difference
+- Performing set operations such as union, intersection, and difference.
 
 
 In set data structure, we use a dictionary also called `hash map`. Hash map helps for efficienct lookups and insertions of key-value pairs. it works by mapping key to a unique index in an array, which is used to store the corresponding value. 
 
 
-Another thing we'll also like to discuss in this tutorial with set `Conflict Resolution`. In set data structure, conflicts can arise when attempting to add an element to a set that already contains the same element. This conflict can be resolved in several ways, depending on the specific requirements and constraints of the application. One approach to resolve this in cases of duplicate is to ignore the duplicate element and not add it to the set. Another approach to conflict resolution is to replace the existing element in the set with the new element, or also use the merge approach to merge the new element to the already existing element in the set, by this, combining any shared information and preserving any unique information.
+Another thing we'll also like to discuss in this tutorial with set is `Conflict Resolution`. In set data structure, conflicts can arise when attempting to add an element to a set that already contains the same element. This conflict can be resolved in several ways, depending on the specific requirements and constraints of the application. One approach to resolve this in cases of duplicate is to ignore the duplicate element and not add it to the set. Another approach to conflict resolution is to replace the existing element in the set with the new element, or also use the merge approach to merge the new element to the already existing element in the set, by this, combining any shared information and preserving any unique information.
 
-The implementation of set may vary base on the programming language being used. But in this tutorial, we'll be learning set with C sharp language.
+The implementation of set may vary base on the programming language being used. But in this tutorial, we'll be learning set with C sharp programming language.
 
 ## What is the purpose of the `SET` data structure?
 
@@ -56,7 +56,7 @@ The above code example is an O(1) performance. Because the Add and Remove operat
 ## Efficiency of common operations
 
 The summary of the common operations and time complexity in Set 
-Operation | Time Complexity
+Operation | Time Complexity/Peformance
 ----------|-----------------
 Add|O(1) on average, O(n) in worse case if the hash table need to be resized
 Remove| O(1) on average, O(n) in the worst case if the hash table needs to be resized.
@@ -128,5 +128,5 @@ Some common error you might encounter when implementing the SET operation is lis
 This are some common errors to look out for carefully when implementing SET operations.
 
 ## [Picture Explanation on Set](4-pictureFile.md)
-## [Other Files Including Tables](6-otherFiles.md)
+## [Other Files Including Tables](6.otherFiles.md)
 
