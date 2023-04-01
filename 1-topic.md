@@ -48,7 +48,26 @@ public int AddNumbers(int num1, int num2)
 ```
 In the Main() function, we're calling the AddNumbers() function with arguments 5 and 10. Within the AddNumbers() function, we're printing out a message to the console indicating that we're executing the function with those arguments. We then calculate the sum of num1 and num2, and print out another message to the console indicating that we're returning the sum. Finally, we return the sum back to the Main() function, where we print out the result to the console.
 
-The [table](6.otherFiles.md) represent how function calls are being track. 
+ ## Tracking the execution of function calls
+### Table example
+
+line | Code | Console Output
+-----|------|---------------
+1|`public void Main()`|
+2|`{`
+3|`int result = AddNumbers(5, 10);`|"Executing AddNumbers function with arguments: 5 and 10"
+4|`Console.WriteLine($"Result of adding 5 and 10 is: {result}");`|"Result of adding 5 and 10 is: 15"
+5|`}`
+6|
+7|`public int AddNumbers(int num1, int num2)`
+8|`{`
+9|`Console.WriteLine($"Executing AddNumbers function with arguments: {num1} and {num2}");`
+10|`int sum = num1 + num2;`
+11|`Console.WriteLine($"Returning sum of {num1} and {num2}: {sum}");`|"Returning sum of 5 and 10: 15"
+12|`return sum;`
+13|`}`
+
+In this table, the left-hand column represents the line numbers in the code, while the middle column shows the code that's being executed on each line. The right-hand column shows the console output that's generated when each line is executed. Note that some lines in the code don't generate any console output, so those cells in the table are left blank.
 ## What is the performance of the data structure 
 All operations in stack must be of O(1) time complexity. The push and pop operation is a perfect example of O(1). This means all item inserted on a stack follows one step each to complete the entire process. The process is constant which means it will always run  in the same amount of time, no matter the input size. For example, if we want to get the first item of an array, it doesn’t matter how big the input size is. 
 
@@ -142,6 +161,9 @@ Some common errors that can occur when using stack data structure in C# are:
 3. Index out of range exception: This occurs when trying to access an element that is outside the range of the stack. To prevent this error, it is important to make sure that the index is within the range of the stack before accessing it.
 
 4. Null reference exception: This occurs when trying to access an object that is null. To prevent this error, it is important to check that the object is not null before accessing it.
+
+
+The [table](6.otherFiles.md) represent how function calls are being track.
 
 
 ## [Picture Explanation on stack](4-pictureFile.md)
