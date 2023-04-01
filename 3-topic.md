@@ -150,13 +150,6 @@ InOrder(root);
 // Output: 1 2 3 4 5 7
 ```
 [Problem Solution](5-C%23File.md)
-
-In this solution, we define a TreeNode class to represent nodes in a binary search tree. Each node has a value, as well as references to its left and right child nodes.
-
-We then define a method called Insert that takes in the root node of a binary search tree and a value to insert, and inserts the value into the tree in the correct position according to the binary search tree property. The method works by recursively traversing the tree and comparing the current node's value to the value to be inserted. If the value to be inserted is less than the current node's value, we recursively insert it into the left subtree; otherwise, we recursively insert it into the right subtree.
-
-Finally, we create a binary search tree with the root value of 4 and two child nodes, and call the Insert method to insert the value 5 into the tree. We then traverse the tree in-order to confirm that the insertion was successful, and the output is the values 1, 2, 3, 4, 5, 7 in order.
-
 ## Explain what kind of error are common using this data structure.
 Some common errors in tree data structure operations include:
 
