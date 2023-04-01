@@ -34,6 +34,15 @@ Set intersection is an operation that returns a new set containing only the elem
 
 For example, if we have two sets A = {1, 2, 3} and B = {3, 4, 5}, then the intersection of these sets, A ∩ B, is {3}, since 3 is the only element that appears in both sets.
 
+# Simple Tree Diagram example
+
+This tree is a nonlinear hierarchical data structure and comprises a collection of entities known as nodes.
+![Image Example](Tree1.jpg)
+
+
+
 [Back to Stack Homepage](1-topic.md)
 
 [Back to Set Homepage](2-topic.md)
+
+[Back to Tree Homepage](3-topic.md)

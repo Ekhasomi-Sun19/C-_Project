@@ -64,7 +64,63 @@ We loop through the input set using a foreach loop, and add each element to the 
 
 Finally, we print the unique elements in the set using a foreach loop.
 
+# TREE Problem Solution
+Given a binary search tree and a target value, implement a function SearchBST to search for the target value in the tree. If the value is found, return the corresponding node; otherwise, return null.
+
+```csharp
+// Define the binary search tree node class
+class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+// Method to insert a value into a binary search tree
+public TreeNode Insert(TreeNode root, int val) {
+    if (root == null) {
+        return new TreeNode(val);
+    }
+    if (root.val > val) {
+        root.left = Insert(root.left, val);
+    } else {
+        root.right = Insert(root.right, val);
+    }
+    return root;
+}
+
+// Example usage
+TreeNode root = new TreeNode(4);
+root.left = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+root.right = new TreeNode(7);
+
+Insert(root, 5);
+
+// Traverse the tree in-order to confirm insertion
+void InOrder(TreeNode node) {
+    if (node != null) {
+        InOrder(node.left);
+        Console.WriteLine(node.val);
+        InOrder(node.right);
+    }
+}
+
+InOrder(root); // Output: 1 2 3 4 5 7
+```
+In this solution, we define a TreeNode class to represent nodes in a binary search tree. Each node has a value, as well as references to its left and right child nodes.
+
+We then define a method called Insert that takes in the root node of a binary search tree and a value to insert, and inserts the value into the tree in the correct position according to the binary search tree property. The method works by recursively traversing the tree and comparing the current node's value to the value to be inserted. If the value to be inserted is less than the current node's value, we recursively insert it into the left subtree; otherwise, we recursively insert it into the right subtree.
+
+Finally, we create a binary search tree with the root value of 4 and two child nodes, and call the Insert method to insert the value 5 into the tree. We then traverse the tree in-order to confirm that the insertion was successful, and the output is the values 1, 2, 3, 4, 5, 7 in order.
+
+
+
 [Back to Stack Homepage](1-topic.md)
 
-
 [Back to Set Tutorial Homepage](2-topic.md)
+
+[Back to Tree Tutorial Homepage](3-topic.md)
