@@ -11,7 +11,14 @@ A `SET` is a data structure that stores unique element of the same type in a sor
 - Performing set operations such as union, intersection, and difference.
 
 
-In set data structure, we use a dictionary also called `hash map`. Hash map helps for efficienct lookups and insertions of key-value pairs. it works by mapping key to a unique index in an array, which is used to store the corresponding value. 
+In set data structure, we use a dictionary also called hash map. Hash map helps for efficienct lookups and insertions of key-value pairs. it works by mapping key to a unique index in an array, which is used to store the corresponding value.
+
+### Hashing 
+In C#, a HashSet is a collection that uses hashing to store and retrieve its elements. When you add an element to a HashSet, C# generates a hash code for the element using its GetHashCode method. The hash code is then used to find the appropriate bucket to store the element in. To retrieve an element from a HashSet, C# generates a hash code for the element being searched and then searches for that hash code in the appropriate bucket. If the hash code is found, C# uses the Equals method to compare the element being searched with the elements in the bucket until it finds a match. 
+
+### Dictionary
+
+A dictionary is a collection that stores key-value pairs. It uses hashing to store and retrieve its key-value pairs efficiently. When you add an item to a dictionary, C# calculates a hash value for the key using a hash function. The hash value is then used to determine the location in memory where the key-value pair should be stored. When you look up a value by its key in a dictionary, C# calculates the hash value for the key again, uses it to determine the location of the corresponding key-value pair, and returns the value associated with the key.
 
 
 Another thing we'll also like to discuss in this tutorial with set is `Conflict Resolution`. In set data structure, conflicts can arise when attempting to add an element to a set that already contains the same element. This conflict can be resolved in several ways, depending on the specific requirements and constraints of the application. One approach to resolve this in cases of duplicate is to ignore the duplicate element and not add it to the set. Another approach to conflict resolution is to replace the existing element in the set with the new element, or also use the merge approach to merge the new element to the already existing element in the set, by this, combining any shared information and preserving any unique information.
